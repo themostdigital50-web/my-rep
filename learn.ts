@@ -16,13 +16,13 @@ function getComputerChoice(): Choice {
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
-function getPlayerChoice(round: number = 1): void {
+function PlayerChoice(round: number = 1): void {
     rl.question(`Round ${round}/${totalRounds} - throw either rock, paper or scissors: `, (answer: string) => {
         const playerChoice = answer.trim().toLowerCase();
 
         if (playerChoice !== "rock" && playerChoice !== "paper" && playerChoice !== "scissors") {
-            console.log("Please choose rock, paper, or scissors.");
-            getPlayerChoice();
+            console.log("Please choose rock, paper, or scissors please.");
+            PlayerChoice();
             return;
         }
 
@@ -30,7 +30,7 @@ function getPlayerChoice(round: number = 1): void {
         console.log(`Computer chose ${computerChoice}.`);
 
         if (playerChoice === computerChoice) {
-            console.log("Draw!");
+            console.log("Draw");
         } else if (
             (playerChoice === "rock" && computerChoice === "scissors") ||
             (playerChoice === "paper" && computerChoice === "rock") ||
@@ -51,8 +51,8 @@ function getPlayerChoice(round: number = 1): void {
             return;
         }
 
-        getPlayerChoice(round + 1);
+        PlayerChoice(round + 1);
     });
 }
 
-getPlayerChoice();
+PlayerChoice();
