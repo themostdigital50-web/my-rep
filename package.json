@@ -1,0 +1,18 @@
+{
+  "name": "learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/learn.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx learn.ts",
+    "start": "node dist/learn.js"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
